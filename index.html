@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>KG BONDA — Mobile Optimized</title>
+    <title>KG BONDA — Phone & Desktop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
@@ -96,7 +96,7 @@
             padding: 0 1rem;
         }
         ::-webkit-scrollbar {
-            width: 4px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: var(--bg-body);
@@ -2047,9 +2047,10 @@
         }
 
         /* ============================================================
-           RESPONSIVE BREAKPOINTS
+           RESPONSIVE — PHONE & DESKTOP
            ============================================================ */
-        /* Small phones */
+
+        /* --- Small phones --- */
         @media (max-width: 380px) {
             .hero-content h1 {
                 font-size: 1.8rem;
@@ -2078,7 +2079,7 @@
             }
         }
 
-        /* Tablets and up */
+        /* --- Tablets and up (≥600px) --- */
         @media (min-width: 600px) {
             .container {
                 padding: 0 2rem;
@@ -2301,6 +2302,7 @@
             }
         }
 
+        /* --- Desktop (≥1024px) --- */
         @media (min-width: 1024px) {
             .product-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -2378,6 +2380,52 @@
                 width: 38px;
                 height: 38px;
                 font-size: 0.9rem;
+            }
+            /* Desktop hover effects */
+            .product-card:hover {
+                transform: translateY(-8px);
+                box-shadow: var(--shadow-hover);
+                border-color: var(--accent);
+            }
+            .product-card:hover .product-image img {
+                transform: scale(1.05);
+            }
+            .product-card .quick-add {
+                transform: translateY(100%);
+            }
+            .product-card:hover .quick-add {
+                transform: translateY(0);
+            }
+            .category-card:hover {
+                transform: translateY(-6px);
+                border-color: var(--accent);
+                box-shadow: var(--shadow-hover);
+            }
+            .voice-bubble:hover {
+                transform: scale(1.08);
+            }
+            .back-to-top:hover {
+                transform: translateY(-4px);
+                background: var(--accent);
+            }
+            .btn-primary:hover {
+                transform: translateY(-3px);
+            }
+            .auth-btn:hover {
+                transform: scale(1.05);
+            }
+            .user-avatar:hover {
+                border-color: var(--gold);
+            }
+            .contact-social a:hover {
+                background: var(--accent);
+                color: #fff;
+                transform: translateY(-3px);
+            }
+            .footer-social a:hover {
+                background: var(--accent);
+                color: #fff;
+                transform: translateY(-3px);
             }
         }
 
@@ -2586,9 +2634,9 @@
                     <h3>Contact Information</h3>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Debre Markose, Ethiopia</li>
-                        <li><i class="fas fa-phone-alt"></i> +251 96 785 9515</li>
-                        <li><i class="fas fa-envelope"></i> kgetaneh8@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> Mon – Sun: 2:00 AM – 11:00 AM</li>
+                        <li><i class="fas fa-phone-alt"></i> +251 91 234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@kgbonda.com</li>
+                        <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM</li>
                     </ul>
                     <div class="contact-social">
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -2598,7 +2646,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/xaqgwrwz" method="POST">
+                    <form id="contactForm" action="YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
                         <input type="text" name="name" placeholder="Your Full Name" required />
                         <input type="email" name="_replyto" placeholder="Your Email Address" required />
                         <input type="text" name="_subject" placeholder="Subject" />
@@ -2848,7 +2896,7 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- ============================================================
-    JAVASCRIPT — Same as before, with mobile optimizations
+    JAVASCRIPT — FULL ENGINE
     ============================================================ -->
     <script>
         // ================================================================
@@ -2990,7 +3038,7 @@
         ];
 
         // ================================================================
-        //  STORE — Same as before
+        //  STORE
         // ================================================================
         const Store = {
             products: [],
@@ -3395,7 +3443,7 @@
         };
 
         // ================================================================
-        //  APP — UI Renderer (same as before, all methods)
+        //  APP — UI Renderer
         // ================================================================
         const App = {
             showToast(message, type = 'info', duration = 2500) {
@@ -4225,8 +4273,8 @@
             App.renderAll();
             initFirebase();
 
-            console.log('📱 KG BONDA — Fully mobile-optimized!');
-            console.log('💡 Beautiful on any screen size.');
+            console.log('📱💻 KG BONDA — Fully responsive for phone & desktop!');
+            console.log('✅ Resize your browser to see it adapt.');
         });
     </script>
 </body>
